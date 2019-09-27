@@ -62,5 +62,20 @@ p_func(torch.split(x_r, split_size_or_sections=3, dim=0))
 p_func(torch.unbind(x_r))
 p_func(torch.where(x_zs == 0, x_os, x_zs))
 
+# ass2 test -> eye : 对角1矩阵, stack() : list concat
+doc_list = []
+tap = torch.eye(2,3)
+doc1 = torch.rand(5,2) @ tap
+doc2 = torch.rand(5,3)
+doc3 = torch.rand(5,3)
+doc4 = torch.rand(5,3)
+doc5 = torch.rand(5,3)
+doc_list.append(doc1)
+doc_list.append(doc2)
+doc_list.append(doc3)
+doc_list.append(doc4)
+doc_list.append(doc5)
+out = torch.stack(doc_list, 0)
+p_func(out)
 
 # More info : https://pytorch.org/docs/stable/torch.html
