@@ -2,7 +2,7 @@ import json
 from collections import namedtuple
 import pandas as pd
 
-FILE_SOURCE = "E:/SchoolCourses/6490-DocumentAnalysis/Assignment/Assignment 2/question_2-2_data/train.json"
+FILE_SOURCE = "./Assignment 2/question_2-2_data/train.json"
 Doc = namedtuple('Doc', 'id label sentence')
 
 def readJson(file_source) :
