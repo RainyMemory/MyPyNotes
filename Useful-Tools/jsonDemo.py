@@ -10,9 +10,12 @@ def readJson(file_source) :
         data = json.load(myF)
     doc_list = []
     for dic in data :
-        doc_list.append(Doc(id = dic["ID"], label = dic["Label"], sentence = dic["Sentence"]))
+        if "Label" in dic :
+            doc_list.append(Doc(id = dic["ID"], label = dic["Label"], sentence = dic["Sentence"]))
+        else :
+            doc_list.append(Doc(id = dic["ID"], label = None, sentence = dic["Sentence"]))
     return pd.DataFrame(doc_list, columns = Doc._fields)
 
-dataset = readJson(FILE_SOURCE)
-
-print(dataset["sentence"][0:21])
+if __name__ == "__main__":
+    dataset = readJson(FILE_SOURCE)
+    print(dataset["sentence"][0:21])
