@@ -23,12 +23,12 @@ def save_net():
         optimizer.step()
     plot_curr_net(131, prediction)
     # save the current net moudle
-    torch.save(myNet, 'net1.pkl') # save the entire net
-    torch.save(myNet.state_dict(), 'net1_params.pkl') # save the current parameters in the network
+    torch.save(myNet, './Pytorch-Sample/net1.pkl') # save the entire net
+    torch.save(myNet.state_dict(), './Pytorch-Sample/net1_params.pkl') # save the current parameters in the network
 
 
 def restore_net() :
-    myNet = torch.load('net1.pkl') # load the whole net work
+    myNet = torch.load('./Pytorch-Sample/net1.pkl') # load the whole net work
     prediction = myNet(x)
     plot_curr_net(132, prediction)
 
@@ -39,7 +39,7 @@ def restore_net_param() :
             torch.nn.ReLU(),
             torch.nn.Linear(15, 1)
     )
-    myNet.load_state_dict(torch.load('net1_params.pkl')) # load the params, will be more efficient
+    myNet.load_state_dict(torch.load('./Pytorch-Sample/net1_params.pkl')) # load the params, will be more efficient
     prediction = myNet(x)
     plot_curr_net(133, prediction)
 
