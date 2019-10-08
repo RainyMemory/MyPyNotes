@@ -18,6 +18,7 @@ class LinRegNet(torch.nn.Module) :
         out = self.fc(x)
         return out
 
+
 def train_lin_net() :
     # create data for linear regression moudle
     x_lin_reg = torch.unsqueeze(torch.linspace(-1, 1, 200), dim=1) # expend the dim of the target tensor by add a pair of []
@@ -53,6 +54,7 @@ def train_lin_net() :
             plt.pause(0.5)
     plt.ioff()
     plt.show()
+
 
 def train_lin_classification_net() :
     # create data for the training module
@@ -91,6 +93,15 @@ def train_lin_classification_net() :
             plt.pause(0.5)
     plt.ioff()
     plt.show()
+
+
+def fast_net_construct():
+    myNet = torch.nn.Sequential(
+        torch.nn.Linear(2, 15),
+            torch.nn.ReLU(),
+            torch.nn.Linear(15, 2)
+    )
+    print(myNet)
 
 
 if __name__ == "__main__":
