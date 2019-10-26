@@ -100,4 +100,4 @@ for epoch in range(EPOCH) :
 # show part of the final moudle's predictions
 test_out = myCnn(test_x[:20])
 pred_y = torch.max(test_out, 1)[1].data.numpy().squeeze()
-print("Final prediction : ", pred_y, "\nReal labels : ", test_y[:20].numpy())
+print(pred_y, " : Final prediction\n", test_y[:20].numpy(), " : Real labels")
