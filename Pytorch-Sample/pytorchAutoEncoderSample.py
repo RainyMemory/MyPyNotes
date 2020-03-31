@@ -10,7 +10,7 @@ import numpy as np
 # define hyper parameters
 EPOCH = 20
 BATCH_SIZE = 64
-LR = 0.007
+LR = 0.004
 DL_MINST = False
 N_TEST_IMG = 5
 
