@@ -70,13 +70,11 @@ class RNN(torch.nn.Module) :
 
 ## Latex 公式编写
 
-- 简单公式示例：
-$$
-\sum_{i=1}^K \frac{W_i \times l_i + bias}{P_i \times l_i} 
-$$
+- 行内公式示例：$\sum_{i=1}^K \frac{W_i \times l_i + bias}{P_i \times l_i}$
 
-- 矩阵示例：
+- 居中矩阵示例：
 $$
+\begin{aligned} 
 \left [
 \begin{matrix}
     a_11 & a_12 & a_13 \\
@@ -105,6 +103,7 @@ $$
     a_31 & a_32
 \end{matrix}
 \right ]
+\end{aligned}
 $$
 
 ---
