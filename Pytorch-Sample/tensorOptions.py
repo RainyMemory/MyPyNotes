@@ -78,4 +78,21 @@ doc_list.append(doc5)
 out = torch.stack(doc_list, 0)
 p_func(out)
 
+# use Guassian Distribution to create tensors
+# if the mean and std is defined by single real number, we have to define the output shape of the tensor
+mean = 0.5
+std = 0.03
+gua_tensor = torch.normal(mean=mean, std=std, size=out.shape, dtype=torch.float)
+# so we got a tensor with all elements sampled from distribution of the defined mean and std and have its dimension the same as tht out tensor above
+p_func(gua_tensor)
+
+# if given mean or std as tensor, we no longer need to define the output shape
+# tensor with dimension 1, end is not reached
+mean = torch.arange(start=1, end=21, step=1, dtype=torch.float) 
+# tensor of dimension 1 from 0.1 to 1.5, separate into 20 parts equally, the end can be reached
+std = torch.linspace(start=0.1, end=1.5, steps=20, dtype=torch.float) 
+gua_tensor = torch.normal(mean=mean, std=std)
+# thus we got a tensor of dimension 1 with 20 elements sampled from each pair of mean and std value
+p_func(gua_tensor)
+
 # More info : https://pytorch.org/docs/stable/torch.html

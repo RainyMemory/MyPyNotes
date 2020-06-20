@@ -17,5 +17,19 @@ def readJson(file_source) :
     return pd.DataFrame(doc_list, columns = Doc._fields)
 
 if __name__ == "__main__":
-    dataset = readJson(FILE_SOURCE)
-    print(dataset["sentence"][0:21])
+    # dataset = readJson(FILE_SOURCE)
+    # print(dataset["sentence"][0:21])
+    a = ['F','D','C','E','B','C']
+    i = 1
+    while i<=5:
+        x = a[i]
+        j = i-1
+        while not j == -2:
+            if j==-1 or not x<a[j]:
+                a[j+1] = x
+                j=-2
+            else:
+                a[j+1] = a[j]
+                j = j-1
+        i = i + 1
+        print(a)
