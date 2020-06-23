@@ -39,3 +39,13 @@
 [__More Info__](./tensorNote.ipynb "TensorFlow basics notes")
 
 ## TensorFlow 简单RMB网络构建示例
+
+- 构建简单RBM，可用于如Knowledge Representation等特征提取工作，Note主要分为三部分
+  
+  - 简单的，流程式的RBM解释与构建
+  
+  - 将RBM封装入类中以方便分离利用
+
+  - 添加采样方法，尝试构建BBRBM等
+
+[__More Info__](./tensorRBMSample.ipynb "Restricted Boltzmann Machine Sample")
