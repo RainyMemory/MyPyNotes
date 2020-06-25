@@ -9,7 +9,7 @@ EPOCH = 1
 BATCH_SIZE = 20
 LR = 0.003
 DOWNLOAD_MINST = False
-ROOT = './dataset/Minst'
+ROOT = './dataset/Mnist'
 
 # download minst dataset
 train_set = torchvision.datasets.MNIST(
